@@ -1,13 +1,5 @@
-FROM node:latest
+FROM httpd:2.4
+COPY index.html /usr/local/apache2/htdocs/
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
 
-COPY . /usr/src/app/
-
-RUN npm install
-
-EXPOSE 9000
-
-CMD [ "npm", "run", "dev" ]
 
